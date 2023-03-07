@@ -15,7 +15,7 @@ const ContactItem = ({ id, name, number }) => {
       <p className={styles.name}>{name}</p>
       <p className={styles.number}>{number}</p>
       <button className={styles.btn} onClick={() => handleRemove(id)}>
-        Delete
+        ❌
       </button>
     </li>
   );
