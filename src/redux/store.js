@@ -1,35 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-//imports to use LocalStorage whith persist
-import {
-  persistStore,
-  persistReducer,
-  FLUSH,
-  REHYDRATE,
-  PAUSE,
-  PERSIST,
-  PURGE,
-  REGISTER,
-} from 'redux-persist';
-import storage from 'redux-persist/lib/storage';
-
-import rootReducer from './root-reducer';
-
-const persistConfig = {
-  key: 'phone-book',
-  storage,
-};
-
-const persistedReducer = persistReducer(persistConfig, rootReducer);
+import filterReducer from './filter/filter-slice';
+import contactReducer from './contacts/contacts-slice';
 
 export const store = configureStore({
-  reducer: persistedReducer,
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-      },
-    }),
+  reducer: {
+    contacts: contactReducer,
+    filter: filterReducer,
+  },
 });
-
-export const persistor = persistStore(store);
