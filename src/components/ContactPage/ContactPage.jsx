@@ -5,18 +5,18 @@ import Filter from 'components/Filter/Filter';
 import styles from './contactPage.module.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import {
-  getContacts,
-  getIsLoading,
-  getError,
+  selectContacts,
+  selectIsLoading,
+  selectError,
 } from 'redux/contacts/contacts-selectors';
 import { fetchContacts } from 'redux/contacts/contacts-operations';
 import { RotatingLines } from 'react-loader-spinner';
 
 const ContactPage = () => {
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
-  const isLoading = useSelector(getIsLoading);
-  const error = useSelector(getError);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     dispatch(fetchContacts());

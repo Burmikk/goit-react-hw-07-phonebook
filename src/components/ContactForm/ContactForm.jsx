@@ -9,7 +9,7 @@ const INITIAL_STATE = {
   phone: '',
 };
 
-const ContactForm = ({ addContact }) => {
+const ContactForm = () => {
   const [state, setState] = useState({ ...INITIAL_STATE });
 
   const focusRef = useRef();
