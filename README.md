@@ -7,6 +7,6 @@
 
 3. Контакты хранятся на back-end
 
-4. Используется аснихронный редакс и функция createAsyncThunk для выполнения get,push,delete запросов
+4. Используется аснихронный Redux и функция createAsyncThunk для выполнения get,push,delete запросов
 
 
